@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="conf_packageName" translatable="false">com.genonbeta.TrebleShot</string>
+    <string name="conf_licence" formatted="false" translatable="false">
+    </string>
+
+</resources>

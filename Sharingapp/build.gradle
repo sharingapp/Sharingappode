@@ -1,0 +1,33 @@
+
+import com.github.jk1.license.render.JsonReportRenderer
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+        mavenLocal()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.0-alpha16'
+    }
+}
+
+plugins {
+    id("com.github.jk1.dependency-license-report") version "1.2"
+}
+
+licenseReport {
+    outputDir = "$projectDir/app/src/main/res/raw"
+    renderers = [new JsonReportRenderer('libraries_index.json', true)]
+    projects = [project] + project.subprojects
+    configurations = ALL
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        maven { url "https://jitpack.io" }
+        mavenLocal()
+    }
+}
